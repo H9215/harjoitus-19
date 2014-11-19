@@ -1,0 +1,48 @@
+/*jesse väänänen
+h9215
+iia14sa
+13.11.14
+
+Tee ohjelma, joka toimii auton nopeusmittarina.
+Periaate on seuraava: Näppäimistä toimii
+nopeusanturina ja näyttä mittarin näyttänä.
+Nopeusmittari laskee viiden viimeisen nopeuden
+keskiarvon ja tulostaa sen nykyisenä nopeutena
+näytälle. Negatiivinen nopeus lopettaa ohjelman.
+Toiminta on siis seuraava:
+Ohjelman kaynnistyksessa mittari näyttää nolla*/
+#include <iostream> 
+using namespace std;
+int main()
+{
+	
+	int nopeus[5] = { 0,0,0,0,0 };
+	int ind = 0;
+	int summa;
+	int mittari;
+	int input;
+
+	cout << "\nsyötä nopeuksia, negatiivinen lopettaa\n\n";
+
+	while (true)
+	{
+		cout << "Anna nopeus: ";
+		cin >> nopeus[ind];
+		input = nopeus[ind];
+		summa = nopeus[0] + nopeus[1] + nopeus[2] + nopeus[3] + nopeus[4];
+		mittari = summa / 5;
+		if (input >= 0)
+		{
+			cout << " --> " << mittari << " km/h" << endl;
+		}
+		else
+			return 0;
+		ind++;
+		if (ind>4)
+		{
+			ind = 0;
+		}
+
+	} 
+
+}
